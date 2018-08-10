@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div *ngIf="products.length>0" class="checkout" (click)="checkout()">
+
+  </div>
+
+  <div *ngIf="products.length>0;else noProductsInCart">
+    <div *ngFor="let p of products| filter: searchText">
+      <div class="row">
+        <div class="col-xs-3 col-md-6">
+          <div class="card dis-card">
+            <div class="card-body">
+              <h5 class="card-title">{{p['title']}}</h5>
+              <p class="card-text">Cases: {{p['cases']}}</p>
+              <p class="card-text">Pieces: {{p['pieces']}}</p>
+              <a (click)="modalWork(p)" class="btn btn-oron">Edit</a>
+              <a (click)="removeProduct(p)" class="btn btn-oron-remove remove-button">Remove</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noProductsInCart>
+    <div class="empty-cart">
+      <div class="empty-cart-svg"></div>
+      <br> Your Cart is Empty!
+    </div>
+  </ng-template>
+</div>

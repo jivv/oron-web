@@ -1,0 +1,55 @@
+<div class="container">
+  <div *ngIf="!noProductsInCart;else noProductsInCartTemplate">
+    <div *ngIf="!orderPlaced;else thankYou">
+      <div class="modal-body ok-div" *ngIf="!noError">
+        <div class="error-icon">
+        </div>
+        <br> {{errorMessage}}
+        <br>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Name Of Shop</span>
+        </div>
+        <input [typeahead]="shops" typeaheadOptionField="shopName" (typeaheadOnSelect)="onShopSelect($event)" type="text" class="form-control"
+          aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="nameOfShop">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Phone Number</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="phoneNumber">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Address</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="address">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Notes</span>
+        </div>
+        <textarea type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+          [(ngModel)]="notes"></textarea>
+      </div>
+      <div class="order-now-button">
+        <a (click)="placeOrder()" class="btn btn-oron">Place Order</a>
+      </div>
+    </div>
+    <ng-template #thankYou>
+      <div class="ok-div">
+        <div class="ok-icon"></div>
+        <br> Thank You!
+        <br> You will recieve a SMS as soon as your order gets accepeted by Distributor!
+      </div>
+    </ng-template>
+  </div>
+  <ng-template #noProductsInCartTemplate>
+    <div class="ok-div">
+      <div class="error-icon"></div>
+      <br> Your Cart looks like Empty!
+      <br> Please add some products to Cart before you Checkout!
+    </div>
+  </ng-template>
+</div>

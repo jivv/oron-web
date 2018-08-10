@@ -1,0 +1,22 @@
+.order-details {
+  padding-top: 15px;
+}
+
+.ok-icon {
+  height: 25px;
+  width: 25px;
+  background-image: url('../../../assets/icons/checked.svg');
+  padding-right: 15px;
+}
+
+.message-sent-icon {
+  height: 25px;
+  width: 25px;
+}
+
+.shop-details {
+  display: flex;
+  margin: auto;
+  margin-bottom: 25px;
+  margin-left: 48%;
+}

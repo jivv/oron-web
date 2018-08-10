@@ -1,0 +1,16 @@
+<div class="container">
+  <div *ngIf="!distributor" class="spinner-3"></div>
+  <div *ngFor="let d of distributor; let i=index">
+    <div class="row">
+      <div class="col-xs-3 col-md-6">
+        <div class="card dis-card">
+          <div class="card-body">
+            <h5 class="card-title">{{d['name']}}</h5>
+            <p class="card-text">{{d['noteToDisplay']}}</p>
+            <a (click)="navigateToProdcuts(i)" class="btn btn-oron">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

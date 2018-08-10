@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+
+html {
+    font-family: 'Dosis', sans-serif !important;
+}
+
+body {
+    font-family: 'Dosis', sans-serif !important;
+}
+
+.btn-oron {
+    background-color: #59488b;
+    color: white !important;
+}
+
+.btn-oron:hover {
+    background-color: #7764b3;
+    color: white !important;
+}
+
+.btn-oron:active {
+    background-color: #633dd3;
+    color: white !important;
+}
+
+.btn-oron-remove {
+    background-color: rgb(245, 84, 84);
+    color: white !important;
+}
+
+.btn-oron-remove:hover {
+    color: white !important;
+    background-color: rgb(231, 47, 47);
+}
+
+.btn-oron-remove:active {
+    color: white !important;
+    background-color: rgb(240, 20, 20);
+}
+
+.btn-oron:disabled {
+    cursor: not-allowed;
+    color: white !important;
+    background-color: #120049;
+}
+
+.spinner-3:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: -30px;
+    margin-left: -30px;
+    border-radius: 50%;
+    border-top: 2px solid #59488b;
+    border-right: 2px solid transparent;
+    animation: spinner 0.7s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.right-padding-zero {
+    padding-right: 0 !important;
+    /* padding-left: 0 !important; */
+}

@@ -1,0 +1,25 @@
+.empty-cart {
+  text-align: center;
+}
+
+.remove-button {
+  margin-left: 10px;
+}
+
+.empty-cart-svg {
+  height: 35px;
+  width: 35px;
+  background-size: contain;
+  margin: auto;
+  background-image: url('../../../assets/icons/empty-cart.svg');
+}
+
+.checkout {
+  height: 55px;
+  width: 55px;
+  background-image: url('../../../assets/icons/checkout.svg');
+  margin: auto;
+  color: green;
+  cursor: pointer;
+  margin-bottom: 2%;
+}

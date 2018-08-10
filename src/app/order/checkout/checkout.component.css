@@ -1,0 +1,21 @@
+order-now-button {
+    margin: auto;
+}
+
+.ok-icon {
+    height: 55px;
+    width: 55px;
+    background-image: url('../../../assets/icons/checked.svg');
+    margin: auto;
+}
+
+.ok-div {
+    text-align: center;
+}
+
+.error-icon {
+    height: 55px;
+    width: 55px;
+    background-image: url('../../../assets/icons/cancel.svg');
+    margin: auto;
+}

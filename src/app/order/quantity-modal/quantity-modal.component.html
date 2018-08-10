@@ -1,0 +1,69 @@
+<div class="container text-center">
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Order {{title}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" *ngIf=!orderPlaced>
+    Please enter the quantity to order
+
+    <div class="modal-body ok-div" *ngIf="showErrorMessage">
+
+      <br>
+
+      <div class="error-icon">
+      </div>
+
+      <br>
+      <br> Please add at least one quantity to order this product!
+      <br>
+    </div>
+    <div class="input-cases-pieces">
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Cases</span>
+        </div>
+        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+          [(ngModel)]="cases">
+      </div>
+
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Pieces</span>
+        </div>
+        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+          [(ngModel)]="pieces">
+      </div>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Free Pieces</span>
+      </div>
+      <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+        [(ngModel)]="freePieces">
+    </div>
+
+    <div class="buttons-close-order">
+
+      <button class="btn btn-oron" (click)="order()">Order</button>
+
+    </div>
+  </div>
+
+  <div class="modal-body ok-div" *ngIf="orderPlaced">
+
+    <br>
+
+    <div class="ok-icon">
+    </div>
+
+    <br>
+    <br> Product added into Cart please close this and go ahead!
+    <br> You can still change the quantity or remove the product during checkout.
+  </div>
+
+</div>

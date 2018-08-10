@@ -1,0 +1,17 @@
+.error-route-icon {
+  height: 55px;
+  width: 55px;
+  background-image: url('../../assets/icons/oooooooooo.svg');
+  margin: auto;
+}
+
+.error-div {
+  text-align: center;
+}
+
+.cart {
+  margin: auto;
+  height: 60px;
+  width: 60px;
+  background-size: contain;
+}

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Search Products</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+      [(ngModel)]="searchText">
+  </div>
+
+  <div *ngIf="products;else loader">
+    <div *ngFor="let p of products| filter: searchText">
+      <div class="row">
+        <div class="col-xs-3 col-md-6">
+          <div class="card dis-card">
+            <div class="card-body">
+              <h5 class="card-title">{{p['name']}}</h5>
+              <p class="card-text">{{p['description']}}</p>
+              <a (click)="modalWork(p)" class="btn btn-oron">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loader>
+    <div class="spinner-3"></div>
+  </ng-template>
+</div>

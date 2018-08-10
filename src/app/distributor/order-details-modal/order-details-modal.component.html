@@ -1,0 +1,42 @@
+<div class="">
+  <div class="modal-header">
+    <h4 class="modal-title">Order Details</h4>
+  </div>
+  <div class="order-details text-center" *ngIf="orderDetails">
+    <div class="">
+      <h3>{{orderDetails.nameOfUser}}</h3>
+      <div class="shop-details">
+        <div *ngIf="orderDetails.orderConfirmed" class="ok-icon"></div>
+        <img *ngIf="orderDetails.messageSent" class="message-sent-icon" src="../../assets/icons/mail-sent.svg" alt="Message Sent!">
+      </div>
+    </div>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Cases</th>
+            <th scope="col">Pieces</th>
+            <th scope="col">Free pieces</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="isArray(orderDetails.orderJson)">
+          <tr *ngFor="let p of orderDetails.orderJson">
+            <td>{{p.title}}</td>
+            <td>{{p.cases}}</td>
+            <td>{{p.pieces}}</td>
+            <td>{{p.freePieces}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    {{orderDetails.notes}}
+    <div class="confirm-div"></div>
+    <button class="btn btn-oron" [disabled]="orderDetails.orderConfirmed" (click)="confirmOrder()">Confirm Order</button>
+    <button *ngIf="orderDetails.orderConfirmed && !orderDetails.messageSent" class="btn btn-oron" [disabled]="orderDetails.messageSent"
+      (click)="resendMessage()">Retry Sending Message</button>
+  </div>
+  <div class="text-center" *ngIf="!orderDetails">
+    Please choose a order on left table to view order details.
+  </div>
+</div>

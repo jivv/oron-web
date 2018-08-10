@@ -1,0 +1,34 @@
+<div class="">
+  <div class="container" *ngIf="!isAuthenticated">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">User Name</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="userName">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+      </div>
+      <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+        [(ngModel)]="password">
+    </div>
+    <div class="order-now-button">
+      <a (click)="loginDistributor()" class="btn btn-oron">Login</a>
+    </div>
+  </div>
+
+  <div class="" *ngIf="isAuthenticated">
+    <div class="container">
+      <div>View and Edit Shops</div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-lg-6  right-padding-zero">
+        <ng2-smart-table [settings]="settings" [source]="orders" (userRowSelect)="showOrder($event)" (confirmDelete)="deleteOrder($event)"></ng2-smart-table>
+      </div>
+      <div class="col-md-6 col-lg-6 right-padding-zero">
+        <app-order-details-modal [orderDetails]="orderDetailsToDisplay" (confirmOrderClick)="confirmSelectedOrder()"></app-order-details-modal>
+      </div>
+    </div>
+  </div>
+</div>
