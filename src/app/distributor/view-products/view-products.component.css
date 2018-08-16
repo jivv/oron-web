@@ -1,0 +1,11 @@
+.error-icon {
+    height: 55px;
+    width: 55px;
+    background-image: url('../../../assets/icons/cancel.svg');
+    margin: auto;
+  }
+  
+  .error-div {
+    text-align: center;
+  }
+  

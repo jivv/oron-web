@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="error-div" *ngIf="showErrorMessage">
+    <br>
+    <div class="error-icon">
+    </div>
+    <br> {{errorMessage}}
+    <br>
+    <br>
+  </div>
+  <ng2-smart-table [settings]="settings" [source]="allProducts" (deleteConfirm)="deleteProduct($event)"
+    (editConfirm)="confirmEdit($event)" (createConfirm)="confirmCreate($event)"></ng2-smart-table>
+</div>

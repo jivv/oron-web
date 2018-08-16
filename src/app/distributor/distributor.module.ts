@@ -6,6 +6,7 @@ import { DistributorRoutingModule } from './distributor-routing.module';
 import { FormsModule } from '@angular/forms';
 import { OrderDetailsModalComponent } from './order-details-modal/order-details-modal.component';
 import { ViewShopsComponent } from './view-shops/view-shops.component';
+import { ViewProductsComponent } from './view-products/view-products.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { ViewShopsComponent } from './view-shops/view-shops.component';
     FormsModule,
     Ng2SmartTableModule
   ],
-  declarations: [ViewOrdersComponent, OrderDetailsModalComponent, ViewShopsComponent]
+  declarations: [ViewOrdersComponent, OrderDetailsModalComponent, ViewShopsComponent, ViewProductsComponent]
 })
 export class DistributorModule {}

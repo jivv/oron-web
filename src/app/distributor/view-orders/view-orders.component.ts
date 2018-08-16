@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../order.service';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { Order } from '../../models/order';
+import { Router } from '@angular/router';
+import { BroadcastdataService } from '../../broadcastdata.service';
 
 @Component({
   selector: 'app-view-orders',
@@ -51,10 +53,13 @@ export class ViewOrdersComponent implements OnInit {
 
   constructor(
     private orderService: OrderService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private router: Router,
+    private broadcastdataService: BroadcastdataService
   ) {}
 
   ngOnInit() {
+    this.broadcastdataService.distributorIdOfLoggedInUser = 1;
     this.getAllOrdersOfDistributor();
   }
 
@@ -111,5 +116,13 @@ export class ViewOrdersComponent implements OnInit {
         }
         this.saveOrder();
       });
+  }
+
+  viewAndEditShops() {
+    this.router.navigate(['/distributor/view-shops']);
+  }
+
+  viewAndEditProducts() {
+    this.router.navigate(['/distributor/view-products']);
   }
 }

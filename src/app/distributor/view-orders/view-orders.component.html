@@ -19,9 +19,6 @@
   </div>
 
   <div class="" *ngIf="isAuthenticated">
-    <div class="container">
-      <div>View and Edit Shops</div>
-    </div>
     <div class="row">
       <div class="col-md-6 col-lg-6  right-padding-zero">
         <ng2-smart-table [settings]="settings" [source]="orders" (userRowSelect)="showOrder($event)" (confirmDelete)="deleteOrder($event)"></ng2-smart-table>
@@ -29,6 +26,10 @@
       <div class="col-md-6 col-lg-6 right-padding-zero">
         <app-order-details-modal [orderDetails]="orderDetailsToDisplay" (confirmOrderClick)="confirmSelectedOrder()"></app-order-details-modal>
       </div>
+    </div>
+    <div class="container">
+      <a (click)="viewAndEditShops()" class="btn btn-oron menu-button">View and Edit Shops</a>
+      <a (click)="viewAndEditProducts()" class="btn btn-oron menu-button">View and Edit Products</a>
     </div>
   </div>
 </div>

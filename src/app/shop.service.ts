@@ -16,4 +16,8 @@ export class ShopService {
   public saveShop(shop: Shop) {
     return this.http.post(AppConstants.REST_URL + '/v1/shop', shop);
   }
+
+  public deleteShop(id: number) {
+    return this.http.post(AppConstants.REST_URL + '/v1/shop/delete', id);
+  }
 }
