@@ -1,27 +1,39 @@
-# Oron
+# order-online
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+  * Order-online is an application for distributors who waste their work force for daily order taking process.
+  * To make things easier, the application helps the shops to order from distributors straight from a web app.
+  * It allows distributor to make changes to their product and customer list.
+  * Notify user with an SMS as soon as their order is confirmed using 2factor as sms gateway
 
-## Development server
+## Technologies used are:
+* Java
+* Spring Boot
+* MySql
+* Gradle as build tool
+* AWS Ec2 instance to host the spring boot application
+* AWS S3 bucket for static website hosting of front-end application
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Steps to setup local development
+Install the required technologies **Gradle**,**Java**,**MySql**,**Node**,**Npm**,**AngularCli**
 
-## Code scaffolding
+# Backend Application:
+* Clone the application code from [this repo](https://github.com/jivv/order-online.git)
+* Navigate to application folder
+* Run `gradle build`
+* Navigate to build/libs folder
+* Run the jar using `java -jar 'JAR NAME'`
+# For development:
+* Download Intellij and import the build.gradle file
+* Run mainapplication
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Frontend Application:
+* Clone the application code from [this repo](https://github.com/jivv/oron-web.git)
+* Navigate to the application folder
+* Run `npm install`
+# For local development:
+* Run `ng serve`
+	* this will start a development server at port 4200 which hot reloads as soon as code changes occur
+# For deployment:
+* Run `ng build --prod`
+	* this will generate application files along with index.html inside dist folder
+* Copy all the files into your server directory
